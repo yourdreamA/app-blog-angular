@@ -1,0 +1,17 @@
+.body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(141deg, #dc35457d 0%, #1f77dbc2 50%, #ef0f0f70 88%);
+    height: 100vh;
+    }
+    #register .container #register-row #register-column #register-box {
+    margin-top: 120px;
+    max-width: 600px;
+    /* height: 10%; */
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+    border-radius: 10px;
+    }
+    #register .container #register-row #register-column #register-box #register-form {
+    padding: 20px;
+    }

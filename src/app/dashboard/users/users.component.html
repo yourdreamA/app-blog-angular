@@ -1,0 +1,49 @@
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card strpied-tabled-with-hover">
+                    <div class="card-header ">
+                        <h4 class="card-title">Striped Table with Hover</h4>
+                        <p class="card-category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body table-full-width table-responsive">
+                            <table mat-table [dataSource]="dataSource" matSort>
+
+                                    <!-- ID Column -->
+                                    <ng-container matColumnDef="email">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                                      <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+                                    </ng-container>
+                                
+                                    <!-- Progress Column -->
+                                    <ng-container matColumnDef="firstName">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header> firstName </th>
+                                      <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+                                    </ng-container>
+                                
+                                    <!-- Name Column -->
+                                    <ng-container matColumnDef="lastName">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header> lastName </th>
+                                      <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+                                    </ng-container>
+                                
+                                    <!-- Color Column -->
+                                    <ng-container matColumnDef="role">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Role </th>
+                                      <td mat-cell *matCellDef="let row" [style.color]="row.role"> {{row.role}} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDialog(row)">
+                                    </tr>
+                                  </table>
+
+                                  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
