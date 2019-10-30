@@ -7,9 +7,13 @@
                         <h4 class="card-title">Striped Table with Hover</h4>
                         <p class="card-category">Here is a subtitle for this table</p>
                     </div>
-                    <div class="card-body table-full-width table-responsive">
-                            <table mat-table [dataSource]="dataSource" matSort>
+                    <mat-form-field>
 
+                      <input matInput [(ngModel)]="searchInput" placeholder="Filter">
+                    </mat-form-field>
+                    <div class="card-body table-full-width table-responsive">
+                            <table mat-table [dataSource]="dataSource.filteredData | search:searchInput" matSort>
+                              
                                     <!-- ID Column -->
                                     <ng-container matColumnDef="email">
                                       <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>

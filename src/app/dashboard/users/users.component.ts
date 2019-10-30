@@ -23,6 +23,7 @@ export class UsersComponent implements OnInit {
   displayedColumns: string[] = ['email', 'firstName', 'lastName', 'role'];
   dataSource: MatTableDataSource<UserData>;
   userU : UserData;
+  searchInput = '';
 
   
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
